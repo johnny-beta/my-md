@@ -66,7 +66,7 @@ cond(no)->op
 
 
 
-
+bug fix
 
 ![Git flow](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015122302.png)
 
@@ -78,4 +78,7 @@ cond(no)->op
 >
 > git diff --cached暂存区 vs 版本库
 
+
 master分支下的修改
+我在这里bugfix下也修改了文件
+
