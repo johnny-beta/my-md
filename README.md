@@ -78,7 +78,6 @@ bug fix
 >
 > git diff --cached暂存区 vs 版本库
 
-
 master分支下的修改
 我在这里bugfix下也修改了文件
-
+master里只在工具区改了
