@@ -71,6 +71,10 @@ git命令
 
 
 
+
+
+
+
 ------
 
 
@@ -101,6 +105,10 @@ bug fix
 > git diff head工作区 vs 版本库
 >
 > git diff --cached暂存区 vs 版本库
+
+---
+
+#### fast-forward
 
 master分支下的修改
 我在这里bugfix下也修改了文件
