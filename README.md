@@ -8,49 +8,39 @@
 
 ![](https://cdn.liaoxuefeng.com/cdn/files/attachments/0013848607465969378d7e6d5e6452d8161cf472f835523000/0)
 
-git安装
+# git安装
 
 
 
-git命令 
-
-
-
-
-
-
+# git命令 
 
 1. git add 
-
 2. git commit 
-
 3. git checkout 
-
 4. git head 
-
 5. git reset 
-
 6. git revert
-
 7. git log 
-
 8. git reflog
-
 9. git branch
-
 10. git pull 
-
 11. git fetch
-
 12. git rebase
-
 13. git statsh
 
-    ---
-
-    
+# git分区
 
 ![](https://raw.githubusercontent.com/DRPrincess/BlogImages/master/qiniu/2429e4d2661e60027537aea0077f6e40.png)
+
+
+
+> git diff工作区 vs 暂存区
+>
+> git diff head工作区 vs 版本库
+>
+> git diff --cached暂存区 vs 版本库
+>
+> 
 
 # Stage 赋予 Git 更多灵活性
 
@@ -63,48 +53,59 @@ git命令
 - 代码需要回滚了？（git reset）
 - git 暂存区设计你本地改到一半，同事跟你说有个紧急的 bug 需要修复。你不想将改到一半的东西 commit 进去。所以先 stash 一下，改掉 bug 并 commit，然后 `stash pop` 出来继续没完成的工作。
 
-
-
-
-
-
-
-
-
-
-
-
-
 ------
-
-
-
-
-
-```flow
-st=>start: 开始
-op=>operation: 我的条件
-cond=>condition: 判断是否通过
-op1=>operation: 测试条件
-e=>end: 结束
-st->op->op1->cond
-cond(yes)->e
-cond(no)->op
-```
 
 
 
 bug fix
 
-![Git flow](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015122302.png)
+
+
+分支
 
 
 
-> git diff工作区 vs 暂存区
->
-> git diff head工作区 vs 版本库
->
-> git diff --cached暂存区 vs 版本库
+![Git flow](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015122302.png)--
+
+---
+
+![](http://www.softwhy.com/data/attachment/portal/201808/04/001249htotjm4kb8bacj4s.jpg)
+
+**二.分支种类作用介绍：**
+
+**1.master分支：**
+
+此分支通常用来存放项目的稳定版本，主要特点如下：
+
+（1）.内容来源主要是分支合并过来，不推荐开发者直接commit提交。
+
+（2）.由于master分支可以是稳定版本，可以随时上线，所以通常版本标签都是打在master分支各个提交之上。
+
+关于标签的用法可以参阅[Git tag标签用法详解](http://www.softwhy.com/article-8541-1.html)一章节。
+
+**2.develop分支：**
+
+develop开发分支通常和feature特征分支配合使用，它是所有feature特征分支的基础。
+
+当在feature分支中测试完新开发的功能后，可以将其合并到develop分支。
+
+**3.hotfix分支：**
+
+当出现紧急问题，比如master线上分支出现代码问题，可以在此分支中进行修补，修补之后然后再合并到master分支。
+
+特别说明：在合并到master主分支的同事，还要合并一份到develop分支，否则之后将develop合并到master时候，可能会导致修复的问题复现。
+
+**4.release分支：**
+
+当develop分支开发到自认为足够稳定的状态，将此分支合并到release分支（在此分支进行上线前的最后测试）。
+
+最后测试完成后，再合并到master分支和develop分支。
+
+合并到master分支是非常好理解的，因为要上线运行。合并到develop是因为release分支后续可能还会发现问题，所以要将与develop分支同步，以防止以后develop再合并到release分支出现问题。
+
+**5.feature分支：**
+
+此分支作用其在介绍develop分支的时候已经涉及，在feature进行新功能的开发，开发完成后再合并到develop。
 
 ---
 
