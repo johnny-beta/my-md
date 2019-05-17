@@ -271,10 +271,10 @@ title可加可不加
 任务列表
 
 - [ ] 完成任务1
-- [ ] 完成任务2
+- [x] ~~完成任务2~~
 - [ ] 完成任务3
-  - [ ] 完成任务3.1
-  - [ ] 完成任务3.2
+  - [x] 完成任务3.1
+  - [x] 完成任务3.2
   - [ ] 完成任务3.3
 - [ ] 。。
 
@@ -392,7 +392,20 @@ public static byte[] test(DataObject[] dictdata, DataObject exportInfo,
 }	
 ```
 
+```javascript
+//页面间传输json数据
+function setFormData(data){
+    //跨页面传递的数据对象，克隆后才可以安全使用
+    var infos = nui.clone(data);
+    //保存list页面传递过来的页面类型：add表示新增、edit表示编辑
+    nui.getbyName("pageType").setValue(infos.pageType);
+    var json = infos.record;
+    var form = new nui.Form("#dataform1");//将普通form转为nui的form
+    form.setData(json);
+    form.setChanged(false);
+}
 
+```
 
 
 
