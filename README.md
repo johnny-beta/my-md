@@ -111,6 +111,10 @@ develop开发分支通常和feature特征分支配合使用，它是所有featur
 
 #### fast-forward
 
+#### git rebase
+
+#### git merge --no-ff
+
 master分支下的修改
 我在这里bugfix下也修改了文件
 master里只在工具区改了
